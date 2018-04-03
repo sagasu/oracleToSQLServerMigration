@@ -8,6 +8,11 @@ runScripts.bat - executes all *.sql scripts in directory on an sql server.
 
 1) Export a table from oracle DB by following this instruction (make sure that you check `include commit every 100 rows` option): https://docs.oracle.com/cd/E17781_01/server.112/e18804/impexp.htm#BABDHJCC
 2) Create a schema in your SQL Server that is this same as in oracle. `create schema foo`
-3) Update directory info in split.ps1 to match location of your sql file, and where do you want to store files after split.
+3) Update directory info in split.ps1 to match location of your sql file, and where do you want to store files after split. Change also the database name.
+`
+$filename = "C:\Users\foo\sql\supply\exportSupply.sql"
+$rootName = "C:\Users\foo\sql\supply\"
+$db = "Test"
+`
 4) update runScripts.bat with a correct url of your SQL server.
 5) Run split.ps1 script and then runScripts.bat

@@ -1,8 +1,9 @@
 #split large sql file into small ones.
 $sw = new-object System.Diagnostics.Stopwatch
 $sw.Start()
-$filename = "C:\Users\gmuk\sql\supply\exportSupply.sql"
-$rootName = "C:\Users\gmuk\sql\supply\"
+$filename = "C:\Users\foo\sql\supply\exportSupply.sql"
+$rootName = "C:\Users\foo\sql\supply\"
+$db = "Test"
 $ext = "sql"
 
 $linesperFile = 100000#100k
@@ -18,7 +19,7 @@ try{
 
         while($reader.EndOfStream -ne $true) {
             "Writing to file $linesperFile"
-            $writer.WriteLine("use Arc;");
+            $writer.WriteLine("use $db;");
             while($reader.EndOfStream -ne $true){
                 $line = $reader.ReadLine();
 
