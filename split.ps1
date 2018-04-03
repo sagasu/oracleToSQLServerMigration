@@ -1,4 +1,4 @@
-#split test
+#split large sql file into small ones.
 $sw = new-object System.Diagnostics.Stopwatch
 $sw.Start()
 $filename = "C:\Users\gmuk\sql\supply\exportSupply.sql"
